@@ -1,0 +1,161 @@
+﻿header {
+    background-color: #000b1a;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000b1a;
+    margin: 10px 0;
+}
+
+@media screen and (min-width:565px) {
+    header {
+        height: 100px;
+        border-bottom: 5px solid #99876a;
+    }
+
+    nav img {
+        width: 175px;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    nav ul {
+        display: block;
+        float: right;
+        margin-top: 49px;
+    }
+
+    nav ul li {
+        float: left;
+        display: block;
+        color: #FFF;
+        padding: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+        position: relative;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    nav ul li:hover {
+        background-color: #99876a;
+    }
+
+    nav ul li::after {
+        clear: right;
+        display: table;
+        content: "";
+    }
+
+    nav ul li a {
+        padding: 15px 0;
+        color: #FFF;
+    }
+
+    nav ul li ul {
+        display: none;
+        float: none;
+        position: absolute;
+        top: -3px;
+        left: -10px;
+        width: 104px;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+    }
+
+    nav ul li ul li {
+        background-color: #99876a;
+        width: 100%;
+        font-size: .7em;
+        padding: 0px;
+        border-radius: 0;
+        border-bottom: 1px solid #000b1a;
+    }
+
+    nav ul li ul li:not(.divider):nth-last-of-type(2) {
+        
+    }
+
+    nav ul li ul li a {
+        display: block;
+        padding: 10px;
+    }
+
+    nav ul li ul li a:hover {
+        color: #000b1a;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .header-mobile {
+        display: none;
+    }
+
+    .header-desktop {
+        display: inline;
+    }
+}
+
+@media screen and (max-width:566px) {
+    header {
+        height: 30px;
+        position: relative;
+    }
+
+    div#navicon {
+        display: block;
+    }
+
+    div#navicon + ul {
+        display: none;
+        background-color: #99876a;
+        position:absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        padding: 10px;
+    }
+
+    div#navicon > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    div#navicon a {
+        display: block;
+        text-align: center;
+        width: 108%;
+    }
+
+    div#navicon + ul li, div#navicon + ul li a {
+        color: #000b1a;
+    }
+
+    div#navicon + ul li ul {
+        display: none;
+        padding: 0 15px;
+    }
+
+    div#navicon + ul li:hover ul {
+        display: block;
+    }
+
+    div#navicon + ul li ul li a {
+        font-size: .8em;
+    }
+
+    .header-mobile {
+        display: inline;
+    }
+
+    .header-desktop {
+        display: none;
+    }
+}
