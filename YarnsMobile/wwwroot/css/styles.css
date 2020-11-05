@@ -37,3 +37,8 @@ address {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
