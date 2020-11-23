@@ -7,27 +7,17 @@ using System.Threading.Tasks;
 
 namespace YarnsMobile.Models
 {
-    public class Review
+    public class Phone
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
-
-        [Required]
-        public string Description { get; set; }
-
-        [Required]
-        public int Rating { get; set; }
+        public string PhoneNumber { get; set; }
 
         public int MemberId { get; set; }
 
         public virtual Member Member { get; set; }
-
-        public int BookId { get; set; }
-
-        public virtual Book Book { get; set; }
     }
 }
