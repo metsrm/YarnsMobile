@@ -27,8 +27,15 @@ namespace YarnsMobile.Models
         [Required]
         public string ISBN { get; set; }
 
-        [Display(Name = "Photo")]
-        public string CoverImage { get; set; }
+        public string Image { get; set; }
+
+        public byte[] PhotoFile { get; set; }
+
+        public string ImageMimeType { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Cover Image")]
+        public IFormFile CoverImage { get; set; }
 
         [Required]
         [Display(Name = "Current Price")]

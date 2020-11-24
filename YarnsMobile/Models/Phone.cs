@@ -15,9 +15,5 @@ namespace YarnsMobile.Models
 
         [Required]
         public string PhoneNumber { get; set; }
-
-        public int MemberId { get; set; }
-
-        public virtual Member Member { get; set; }
     }
 }
