@@ -1,5 +1,11 @@
 ﻿html {
     font-family: Verdana, Geneva, sans-serif;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
 }
 
 header, footer {
@@ -41,4 +47,8 @@ address {
 p {
     margin-bottom: 20px;
     line-height: 1.5;
+}
+
+p:last-of-type {
+    margin-bottom: 60px;
 }

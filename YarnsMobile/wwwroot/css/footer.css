@@ -1,6 +1,8 @@
 ﻿footer {
     background-color: #99876a;
     padding: 10px 0;
+    position: absolute;
+    bottom: 0;
 }
 
 footer article {
