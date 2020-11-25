@@ -9,7 +9,7 @@
     margin: 10px 0;
 }
 
-@media screen and (min-width:565px) {
+@media screen and (min-width:566px) {
     header {
         height: 100px;
         border-bottom: 5px solid #99876a;
@@ -102,7 +102,7 @@
     }
 }
 
-@media screen and (max-width:566px) {
+@media screen and (max-width:565px) {
     header {
         height: 30px;
         position: relative;
@@ -131,7 +131,6 @@
     div#navicon a {
         display: block;
         text-align: center;
-        width: 108%;
     }
 
     div#navicon + ul li, div#navicon + ul li a {
