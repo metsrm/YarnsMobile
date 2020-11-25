@@ -32,5 +32,7 @@ namespace YarnsMobile.Models
         [Required]
         [Display(Name = "Zip Code")]
         public int ZipCode { get; set; }
+
+        public virtual IEnumerable<Member> Members { get; set; }
     }
 }
