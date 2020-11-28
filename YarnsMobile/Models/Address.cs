@@ -17,9 +17,6 @@ namespace YarnsMobile.Models
         [Display(Name = "Address")]
         public string AddressName { get; set; }
 
-        [Required]
-        public string RoadSuffix { get; set; }
-
         [Display(Name = "Unit #")]
         public string UnitNumber { get; set; }
 

@@ -22,6 +22,7 @@ namespace YarnsMobile.Models
 
         [Required]
         [Display(Name = "Copyright Year")]
+        [DataType(DataType.Text)]
         public int CopyrightYear { get; set; }
 
         [Required]
