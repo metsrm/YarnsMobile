@@ -13,11 +13,7 @@ namespace YarnsMobile.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public int MemberId { get; set; }
-
         public virtual Member Member { get; set; }
-
-        public int BookId { get; set; }
 
         public virtual Book Book { get; set; }
 

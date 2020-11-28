@@ -27,8 +27,6 @@ namespace YarnsMobile.Models
 
         public int AccountNumberSuffix { get; set; }
 
-        public int AddressId { get; set; }
-
         public virtual Address Address { get; set; }
 
         public virtual IEnumerable<PurchasedBook> PurchasedBooks { get; set; }
