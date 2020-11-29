@@ -1,7 +1,32 @@
-﻿
+﻿@model IEnumerable<YarnsMobile.Models.Book>
 @{
-    ViewData["Title"] = "BrowseBooks";
+    ViewData["Title"] = "Browse Books";
 }
 
-<h2>BrowseBooks</h2>
+<div class="container">
+    <h2>Browse Books</h2>
 
+    @foreach (var item in Model)
+    {
+        <p>
+            <strong>@Html.DisplayNameFor(modelItem => item.Title):</strong><br />
+            @Html.DisplayFor(modelItem => item.Title)<br /><br />
+
+            <strong>@Html.DisplayNameFor(modelItem => item.Author):</strong><br />
+            @Html.DisplayFor(modelItem => item.Author)<br /><br />
+
+            <strong>@Html.DisplayNameFor(modelItem => item.CopyrightYear):</strong><br />
+            @Html.DisplayFor(modelItem => item.CopyrightYear)<br /><br />
+
+            <strong>@Html.DisplayNameFor(modelItem => item.ISBN):</strong><br />
+            @Html.DisplayFor(modelItem => item.ISBN)<br /><br />
+
+            <strong>@Html.DisplayNameFor(modelItem => item.Image):</strong><br />
+            <img src="@Url.Action("GetImage", "Books", new { id = item.Id })" height="200" /><br /><br />
+
+
+            <strong>@Html.DisplayNameFor(modelItem => item.CurrentPrice):</strong><br />
+            @Html.DisplayFor(modelItem => item.CurrentPrice)
+        </p>
+    }
+</div>

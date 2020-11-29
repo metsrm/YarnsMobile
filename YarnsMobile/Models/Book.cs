@@ -14,18 +14,18 @@ namespace YarnsMobile.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Title")]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter an Author")]
         public string Author { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Copyright Year")]
+        [RegularExpression(@"\d+", ErrorMessage = "Invalid year")]
         [Display(Name = "Copyright Year")]
-        [DataType(DataType.Text)]
-        public int CopyrightYear { get; set; }
+        public string CopyrightYear { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter an ISBN")]
         public string ISBN { get; set; }
 
         public string Image { get; set; }
@@ -38,9 +38,10 @@ namespace YarnsMobile.Models
         [Display(Name = "Cover Image")]
         public IFormFile CoverImage { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Price")]
+        [RegularExpression(@"\d+.\d{2}", ErrorMessage = "Invalid price")]
         [Display(Name = "Current Price")]
-        public decimal CurrentPrice { get; set; }
+        public string CurrentPrice { get; set; }
 
         public virtual IEnumerable<Review> Reviews { get; set; }
     }

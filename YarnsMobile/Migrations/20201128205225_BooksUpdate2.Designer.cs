@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YarnsMobile.Database;
 
 namespace YarnsMobile.Migrations
 {
     [DbContext(typeof(YarnsMobileContext))]
-    partial class YarnsMobileContextModelSnapshot : ModelSnapshot
+    [Migration("20201128205225_BooksUpdate2")]
+    partial class BooksUpdate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,11 +54,9 @@ namespace YarnsMobile.Migrations
                     b.Property<string>("Author")
                         .IsRequired();
 
-                    b.Property<string>("CopyrightYear")
-                        .IsRequired();
+                    b.Property<string>("CopyrightYear");
 
-                    b.Property<string>("CurrentPrice")
-                        .IsRequired();
+                    b.Property<decimal>("CurrentPrice");
 
                     b.Property<string>("ISBN")
                         .IsRequired();

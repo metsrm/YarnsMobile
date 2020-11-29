@@ -20,6 +20,11 @@ namespace YarnsMobile.Repositories
             return _context.Books.ToList();
         }
 
+        public Book GetBookById(int id)
+        {
+            return _context.Books.FirstOrDefault(b => b.Id == id);
+        }
+
         public void AddBook(Book book)
         {
             _context.Books.Add(book);

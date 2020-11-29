@@ -9,6 +9,7 @@ namespace YarnsMobile.Repositories
     public interface IRepository
     {
         IEnumerable<Book> GetBooks();
+        Book GetBookById(int id);
         void AddBook(Book book);
     }
 }
