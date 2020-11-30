@@ -53,3 +53,11 @@ p {
 p:last-child {
     margin-bottom: 60px;
 }
+
+a {
+    color: #000b1a;
+}
+
+a:hover {
+    text-decoration: none;
+}

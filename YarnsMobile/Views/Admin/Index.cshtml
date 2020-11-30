@@ -1,7 +1,28 @@
-﻿
+﻿@model IEnumerable<YarnsMobile.Models.Book>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <a asp-controller="Admin" asp-action="AddBook">Add new Book</a><br /><br />
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Copyright Year</th>
+            <th>Current Price</th>
+            <th>Update</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                <td>@Html.DisplayFor(modelItem => item.CopyrightYear)</td>
+                <td>$@Html.DisplayFor(modelItem => item.CurrentPrice)</td>
+                <td><a asp-action="UpdateBook" asp-controller="Admin" asp-route-id="@item.Id">Update</a></td>
+            </tr>
+        }
+    </table>
+</div>
 

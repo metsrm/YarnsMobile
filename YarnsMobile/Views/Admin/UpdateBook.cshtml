@@ -1,0 +1,48 @@
+﻿@model YarnsMobile.ViewModels.BookViewModel
+@{
+    ViewData["Title"] = "Update Book";
+}
+
+<div class="container">
+    <h2>Update a Book</h2>
+
+    <form asp-action="UpdateBook" enctype="multipart/form-data" method="post">
+        <div class="entry-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" placeholder="Title" />
+            <span asp-validation-for="Title"></span>
+        </div>
+
+        <div class="entry-group">
+            <label asp-for="Author"></label>
+            <input asp-for="Author" placeholder="Author" />
+            <span asp-validation-for="Author"></span>
+        </div>
+
+        <div class="entry-group">
+            <label asp-for="CopyrightYear"></label>
+            <input asp-for="CopyrightYear" placeholder="CopyrightYear" />
+            <span asp-validation-for="CopyrightYear"></span>
+        </div>
+
+        <div class="entry-group">
+            <label asp-for="ISBN"></label>
+            <input asp-for="ISBN" placeholder="ISBN" />
+            <span asp-validation-for="ISBN"></span>
+        </div>
+
+        <div class="entry-group">
+            <label asp-for="CoverImage"></label>
+            <input asp-for="CoverImage" />
+            <span asp-validation-for="CoverImage"></span>
+        </div>
+
+        <div class="entry-group">
+            <label asp-for="CurrentPrice"></label>
+            <input asp-for="CurrentPrice" placeholder="Current Price" />
+            <span asp-validation-for="CurrentPrice"></span>
+        </div>
+
+        <input type="submit" value="Update Book" />
+    </form>
+</div>

@@ -30,5 +30,10 @@ namespace YarnsMobile.Repositories
             _context.Books.Add(book);
             _context.SaveChanges();
         }
+
+        public void UpdateBook(Book book)
+        {
+            _context.SaveChanges();
+        }
     }
 }
