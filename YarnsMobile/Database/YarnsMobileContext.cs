@@ -8,7 +8,7 @@ using YarnsMobile.Models;
 
 namespace YarnsMobile.Database
 {
-    public class YarnsMobileContext : IdentityDbContext
+    public class YarnsMobileContext : IdentityDbContext<Member>
     {
         public YarnsMobileContext(DbContextOptions<YarnsMobileContext> options) : base(options) { }
 
