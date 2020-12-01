@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using YarnsMobile.Models;
 
 namespace YarnsMobile.Database
 {
-    public class YarnsMobileContext : DbContext
+    public class YarnsMobileContext : IdentityDbContext
     {
         public YarnsMobileContext(DbContextOptions<YarnsMobileContext> options) : base(options) { }
 
