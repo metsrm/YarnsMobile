@@ -61,22 +61,12 @@ namespace YarnsMobile.Controllers
         public IActionResult UpdateBook(int id)
         {
             Book book = _repository.GetBookById(id);
-            return View(new BookViewModel
-            {
-                Title = book.Title,
-                Author = book.Author,
-                CopyrightYear = book.CopyrightYear,
-                ISBN = book.ISBN,
-                Image = book.Image,
-                PhotoFile = book.PhotoFile,
-                ImageMimeType = book.Image,
-                CurrentPrice = book.CurrentPrice
-            });
+            return View(book);
         }
         
         [Route("Admin/UpdateBook/{id}")]
         [HttpPost, ActionName("UpdateBook")]
-        public IActionResult UpdateBookPost(BookViewModel book)
+        public IActionResult UpdateBookPost(Book book)
         {
             Book newBook = _repository.GetBookById(book.Id);
             if (ModelState.IsValid)
@@ -104,6 +94,42 @@ namespace YarnsMobile.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(book);
+        }
+
+        public IActionResult GetImage(int id)
+        {
+            Book requestedBook = _repository.GetBookById(id);
+            if (requestedBook != null)
+            {
+                string webRootpath = _environment.WebRootPath;
+                string folderPath = "\\images\\";
+                string fullPath = webRootpath + folderPath + requestedBook.Image;
+                if (System.IO.File.Exists(fullPath))
+                {
+                    FileStream fileOnDisk = new FileStream(fullPath, FileMode.Open);
+                    byte[] fileBytes;
+                    using (BinaryReader br = new BinaryReader(fileOnDisk))
+                    {
+                        fileBytes = br.ReadBytes((int)fileOnDisk.Length);
+                    }
+                    return File(fileBytes, requestedBook.ImageMimeType);
+                }
+                else
+                {
+                    if (requestedBook.PhotoFile.Length > 0)
+                    {
+                        return File(requestedBook.PhotoFile, requestedBook.ImageMimeType);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

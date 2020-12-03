@@ -1,0 +1,28 @@
+﻿label.requiredLabel::after {
+    content: "*";
+    color: red;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+label:not(first-of-type) {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+}
+
+span.field-validation-error {
+    color: red;
+    display: block;
+    font-size: 0.7em;
+    margin-top: 2px;
+}
+
+.red {
+    color: red;
+}

@@ -4,30 +4,35 @@
 }
 
 <div class="container">
+    <a asp-controller="Admin" asp-action="Index"><< Go Back</a><br /><br />
+
     <h2>Add a Book</h2>
-    <p>Please fill out the information below!</p>
+    <p>
+        Please fill out the information below!<br />
+        All required fields are marked with (<span class="red">*</span>)
+    </p>
 
     <form asp-action="AddBook" enctype="multipart/form-data" method="post">
         <div class="entry-group">
-            <label asp-for="Title"></label>
+            <label asp-for="Title" class="requiredLabel"></label>
             <input asp-for="Title" placeholder="Title" />
             <span asp-validation-for="Title"></span>
         </div>
 
         <div class="entry-group">
-            <label asp-for="Author"></label>
+            <label asp-for="Author" class="requiredLabel"></label>
             <input asp-for="Author" placeholder="Author" />
             <span asp-validation-for="Author"></span>
         </div>
 
         <div class="entry-group">
-            <label asp-for="CopyrightYear"></label>
-            <input asp-for="CopyrightYear" placeholder="CopyrightYear" />
+            <label asp-for="CopyrightYear" class="requiredLabel"></label>
+            <input asp-for="CopyrightYear" placeholder="Copyright Year" />
             <span asp-validation-for="CopyrightYear"></span>
         </div>
 
         <div class="entry-group">
-            <label asp-for="ISBN"></label>
+            <label asp-for="ISBN" class="requiredLabel"></label>
             <input asp-for="ISBN" placeholder="ISBN" />
             <span asp-validation-for="ISBN"></span>
         </div>
@@ -39,7 +44,7 @@
         </div>
 
         <div class="entry-group">
-            <label asp-for="CurrentPrice"></label>
+            <label asp-for="CurrentPrice" class="requiredLabel"></label>
             <input asp-for="CurrentPrice" placeholder="Current Price" />
             <span asp-validation-for="CurrentPrice"></span>
         </div>

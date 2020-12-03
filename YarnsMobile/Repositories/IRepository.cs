@@ -12,7 +12,6 @@ namespace YarnsMobile.Repositories
         IEnumerable<Book> GetBooks();
         Book GetBookById(int id);
         void AddBook(Book book);
-
         void UpdateBook(Book book);
     }
 }
