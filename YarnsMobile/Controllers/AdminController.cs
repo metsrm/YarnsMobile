@@ -90,7 +90,7 @@ namespace YarnsMobile.Controllers
                 newBook.ISBN = book.ISBN;
                 newBook.CurrentPrice = book.CurrentPrice;
 
-                _repository.UpdateBook(newBook);
+                _repository.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(book);

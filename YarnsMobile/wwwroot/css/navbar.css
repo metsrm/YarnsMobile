@@ -49,6 +49,10 @@
         content: "";
     }
 
+    nav ul li#icon {
+        display: none;
+    }
+
     nav ul li a {
         padding: 15px 0;
         color: #FFF;

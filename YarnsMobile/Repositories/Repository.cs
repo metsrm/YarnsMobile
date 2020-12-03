@@ -32,7 +32,7 @@ namespace YarnsMobile.Repositories
             _context.SaveChanges();
         }
 
-        public void UpdateBook(Book book)
+        public void SaveChanges()
         {
             _context.SaveChanges();
         }
